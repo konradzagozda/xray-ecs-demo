@@ -16,9 +16,9 @@ REPO_URL_BASE=$(terraform -chdir=infra/1.ecr output -raw repository_url_base)
 
 ./build.sh "$AWS_PROFILE" "$REPO_URL_BASE" "$REPO_NAME" "$TAG"
 
-# create ECS cluster, task definition, service 
+# create ECS cluster, task definition, service, dynamodb table
 terraform -chdir=infra/2.ecs init
-terraform -chdir=infra/2.ecs apply -auto-approve -var="image_url=$REPO_URL_BASE/$REPO_NAME"
+terraform -chdir=infra/2.ecs apply -auto-approve -var="image_url=$REPO_URL_BASE/$REPO_NAME:$TAG"
 
 # wait for task to be created
 sleep 30

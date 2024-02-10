@@ -7,20 +7,32 @@ resource "aws_ecs_task_definition" "app_with_xray" {
   requires_compatibilities = ["FARGATE"]
   network_mode             = "awsvpc"
   execution_role_arn       = aws_iam_role.ecs_task_execution_role.arn
+  task_role_arn            = aws_iam_role.ecs_task_role.arn
   cpu                      = 512
   memory                   = 3072
-  task_role_arn            = aws_iam_role.ecs_task_execution_role.arn
 
   container_definitions = jsonencode([
     {
-      name      = "app_with_xray"
-      image     = "817861099197.dkr.ecr.us-west-2.amazonaws.com/app-with-xray"
-      cpu       = 0
-      essential = true
+      name              = "xray-daemon",
+      image             = "amazon/aws-xray-daemon",
+      cpu               = 32,
+      memoryReservation = 256,
+      portMappings = [
+        {
+          "containerPort" : 2000,
+          "protocol" : "udp"
+        }
+      ]
+    },
+    {
+      name              = "app_with_xray"
+      image             = var.image_url
+      cpu               = 256
+      memoryReservation = 1024
+      essential         = true
       portMappings = [
         {
           containerPort = 5000
-          hostPort      = 5000
         }
       ],
       logConfiguration = {
