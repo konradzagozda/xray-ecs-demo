@@ -1,7 +1,22 @@
 # X-RAY demo
 
+With X-Ray you can measure latencies within and outside your distributed system.
+It provides info about:
+
+- requests / min made to each component
+- average latency, p50, p90
+- 500 error count
+- list of traces
+- trace analysis view
+
+List View
 ![list view](assets/list-view.png)
+
+Service Map
 ![service map](assets/service-map.png)
+
+Trace View
+![trace view](assets/trace.png)
 
 ## Requirements
 
