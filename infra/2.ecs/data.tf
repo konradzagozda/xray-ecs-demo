@@ -1,7 +1,3 @@
-data "aws_iam_role" "ecs_task_execution_role" {
-  name = "ecsTaskExecutionRole"
-}
-
 data "aws_vpc" "default" {
   default = true
 }
