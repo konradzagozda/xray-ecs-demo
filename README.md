@@ -1,5 +1,8 @@
 # X-RAY demo
 
+![list view](assets/list-view.png)
+![service map](assets/service-map.png)
+
 ## Requirements
 
 Dependencies:
