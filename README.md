@@ -1,9 +1,10 @@
 # X-RAY demo
 
+Demo project presenting how to use XRAY with flask application.
 With X-Ray you can measure latencies within and outside your distributed system.
 It provides info about:
 
-- requests / min made to each component
+- requests / min made to and from each component
 - average latency, p50, p90
 - 500 error count
 - list of traces
@@ -42,10 +43,4 @@ After you finish, remember to clean up after yourself!
 
 ```sh
 ./cleanup.sh AWS_PROFILE
-```
-
-## Commands
-
-```sh
-flask --app hello run -p 5001
 ```
