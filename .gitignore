@@ -1,2 +1,8 @@
 __pycache__
 .mypy_cache
+
+.terraform
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.tfstate.lock.info
