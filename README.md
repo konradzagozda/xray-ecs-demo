@@ -35,8 +35,7 @@ Other:
 
 ## Deployment
 
-This script will deploy and build all necessary things and give you IP for you to make some calls
-After making some API calls, navigate to x-ray console and explore the tool
+This script will deploy and build all necessary things and give you IP for you to make some calls, after making some, navigate to x-ray console and explore the tool
 
 ```sh
 ./deploy.sh AWS_PROFLE TAG
