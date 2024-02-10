@@ -1,5 +1,5 @@
 # Use the Python 3.11 Alpine image
-FROM python:3.11-alpine
+FROM python:3.11-alpine3.19
 
 WORKDIR /usr/src/app
 
