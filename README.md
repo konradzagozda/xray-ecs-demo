@@ -1,7 +1,7 @@
 # X-RAY demo
 
-Demo project presenting how to use XRAY with flask application.
-With X-Ray you can measure latencies within and outside your distributed system.
+Demo project presenting how to instrument your with flask application with XRAY.
+With X-Ray you can measure latencies within and outside of your distributed system
 It provides info about:
 
 - requests / min made to and from each component
